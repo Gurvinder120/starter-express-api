@@ -1,9 +1,16 @@
-const express = require('express');
+const express = require("express");
 const cors = require("cors");
-app.use(cors())
-const app = express()
-app.post('/demo', (req, res) => {
-    console.log("Just got a request!")
-    res.send('Yo!')
-})
-app.listen(process.env.PORT || 3000)
+
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+PORT = 3000;
+
+app.post("/demo", async (req, res) => {
+    res.send("hELOO");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+});
